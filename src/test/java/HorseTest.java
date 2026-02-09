@@ -38,4 +38,22 @@ public class HorseTest {
         });
         assertEquals("Distance cannot be negative.", ex.getMessage());
     }
+    @Test
+    public void getNameReturnsCorrectName(){
+        Horse gass = new Horse("Gass", 5d, 5d);
+        assertEquals("Gass", gass.getName());
+    }
+    @Test
+    public void getNameReturnsCorrectSpeed(){
+        Horse gass = new Horse("Gass", 5d, 5d);
+        assertEquals(5d, gass.getSpeed());
+    }
+    @Test
+    public void getNameReturnsCorrectDistance(){
+        Horse gass = new Horse("Gass", 5d, 5d);
+        assertEquals(5d, gass.getDistance());
+        Horse gass2 = new Horse("Gass", 5d);
+        assertEquals(0d, gass2.getDistance());
+
+    }
 }
