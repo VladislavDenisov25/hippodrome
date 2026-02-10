@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -42,11 +40,11 @@ public class HippodromeTest {
         }
 
         Hippodrome hippodrome = new Hippodrome(horseArrayList);
-        assertEquals(horseArrayList, hippodrome.getHorses());
+        assertSame(horseArrayList, hippodrome.getHorses());
     }
 
     @Test
-    public void movementAllHorses() {
+    public void moveInvokesMoveForEachHorse() {
         List<Horse> horsesMockList = new ArrayList<>();
 
         for (int i = 0; i < 50; i++) {

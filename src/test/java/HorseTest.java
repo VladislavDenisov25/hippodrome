@@ -66,7 +66,7 @@ public class HorseTest {
 
     @ParameterizedTest
     @ValueSource(doubles = {0.5d})
-    public void getMoveReturnsCorrectMove(double random) {
+    public void ReturnsCorrectMove(double random) {
         Horse gass = new Horse("Gass", 5d, 5d);
         try (MockedStatic<Horse> mocked = mockStatic(Horse.class, CALLS_REAL_METHODS)) {
             mocked.when(() -> Horse.getRandomDouble(0.2, 0.9)).thenReturn(random);
